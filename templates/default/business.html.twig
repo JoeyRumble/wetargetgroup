@@ -1,0 +1,152 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+  <header class="relative text-white lg:h-[440px] md:h-[340px] h-[300px] w-full bg-cover" style="background-image: url('{{ asset('images/assets/bg_wetarget_gradient.jpg') }}');">
+    <div class="max-w-[1000px] mx-auto px-4 h-full flex items-center justify-center relative z-10 pt-30">
+      <h1 class="lg:text-7xl md:text-6xl text-5xl  text-center text-secondary leading-[1] font-extrabold md:font-black relative text-stroke-width-3 tracking-[-4px] mb-10 paint-order-stroke-fill text-stroke-white delay-[300ms] duration-[600ms] taos:scale-[0.6] taos:opacity-0" data-taos-offset="100">{{ page.title }}</h1>
+    </div>
+    <div class="absolute w-full overflow-hidden -bottom-[1px] h-[870px] pointer-events-none">
+      <svg class="absolute w-[3840px] h-[870px] bottom-0 left-1/2 -translate-x-1/2" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 3840 870">
+        <g>
+          <path style="fill: #fff;stroke:none;" d="M3291,1.2c-1.8,62.4-10.4,124.4-25.8,186.1-39.2,155.1-115.1,290.9-227.5,407.4-112.2,116.6-244.6,196.9-397.2,240.9-152.3,43.2-307.6,45.7-465.9,7.6L0,301.8v568.2h3840V1.2h-549Z"/>
+        </g>
+      </svg>
+    </div>
+  </header>
+
+  <section class="w-full pb-20 delay-[300ms] duration-[600ms] taos:scale-[0.6] taos:opacity-0" data-taos-offset="100">
+    <div class="max-w-[1180px] mx-auto px-4">
+      <div class="flex justify-center md:py-10 py-20">
+        <img src="{{ asset('images/logo/business_play.svg') }}" alt="Business" class="h-12" />
+      </div>
+
+      {# First row: Title + Text #}
+      <div class="grid md:grid-cols-2 gap-10 md:mb-40 mb-20">
+        <div>
+          <h2 class="xl:text-[83px] lg:text-6xl md:text-5xl text-4xl leading-[.9] text-tertiary font-black mb-4">{{ page.subtitle1 }}</h2>
+        </div>
+        <div>
+          <div class="default-content">{{ page.text1|raw }}</div>
+        </div>
+      </div>
+
+      <div class="grid xl:grid-cols-[245px_1fr_250px] md:grid-cols-[245px_1fr] gap-8">
+        <div id="sticky-nav-container" class="md:block hidden">
+          <ul id="sticky-nav" class="transition-all duration-300">
+            {% if page.subtitle2 %}
+              <li>
+              <a href="#section-{{ page.subtitle2|lower|replace({' ': '-'}) }}" class="nav-link text-tertiary font-black text-xl hover:opacity-30 transition flex mb-1 py-1 opacity-100">
+                {{ page.subtitle2 }}
+              </a>
+              </li>
+            {% endif %}
+
+            {% if page.subtitle3 %}
+              <li>
+                <a href="#section-{{ page.subtitle3|lower|replace({' ': '-'}) }}" class="nav-link text-tertiary font-black text-xl hover:opacity-30 transition flex mb-1 py-1 opacity-50">
+                  {{ page.subtitle3 }}
+                </a>
+              </li>
+            {% endif %}
+
+            {% if page.subtitle4 %}
+              <li>
+                <a href="#section-{{ page.subtitle4|lower|replace({' ': '-'}) }}" class="nav-link text-tertiary font-black text-xl hover:opacity-30 transition flex mb-1 py-1 opacity-50">
+                  {{ page.subtitle4 }}
+                </a>
+              </li>
+            {% endif %}
+
+            {% if page.subtitle5 %}
+              <li>
+                <a href="#section-{{ page.subtitle5|lower|replace({' ': '-'}) }}" class="nav-link text-tertiary font-black text-xl hover:opacity-30 transition flex mb-1 py-1 opacity-50">
+                  {{ page.subtitle5 }}
+                </a>
+              </li>
+            {% endif %}
+
+            {% if page.subtitle6 %}
+              <li>
+                <a href="#section-{{ page.subtitle6|lower|replace({' ': '-'}) }}" class="nav-link text-tertiary font-black text-xl hover:opacity-30 transition flex mb-1 py-1 opacity-50">
+                  {{ page.subtitle6 }}
+                </a>
+              </li>
+            {% endif %}
+          </ul>
+        </div>
+
+        <div class="grid grid-cols-1 gap-10">
+          {% if page.text2 %}
+            <div class="default-content" id="section-{{ page.subtitle2|lower|replace({' ': '-'}) }}">
+              <h2 class="text-tertiary">{{ page.subtitle2 }}</h2>
+
+              {{ page.text2|raw }}
+            </div>
+          {% endif %}
+
+          {% if page.text3 %}
+            <div class="default-content" id="section-{{ page.subtitle3|lower|replace({' ': '-'}) }}">
+              <h2 class="text-tertiary">{{ page.subtitle3 }}</h2>
+
+              {{ page.text3|raw }}
+            </div>
+          {% endif %}
+
+          {% if page.text4 %}
+            <div class="default-content" id="section-{{ page.subtitle4|lower|replace({' ': '-'}) }}">
+              <h2 class="text-tertiary">{{ page.subtitle4 }}</h2>
+
+              {{ page.text4|raw }}
+            </div>
+          {% endif %}
+
+          {% if page.text5 %}
+            <div class="default-content" id="section-{{ page.subtitle5|lower|replace({' ': '-'}) }}">
+              <h2 class="text-tertiary">{{ page.subtitle5 }}</h2>
+
+              {{ page.text5|raw }}
+            </div>
+          {% endif %}
+
+          {% if page.text6 %}
+            <div class="default-content" id="section-{{ page.subtitle6|lower|replace({' ': '-'}) }}">
+              <h2 class="text-tertiary">{{ page.subtitle6 }}</h2>
+
+              {{ page.text6|raw }}
+            </div>
+          {% endif %}
+      </div>
+
+      <div class="relative xl:block hidden">
+        <img src="/images/assets/business-image.png" class="absolute left-0 max-w-none" />
+      </div>
+    </div>
+  </section>
+
+  <section class="w-full">
+    <div class="max-w-[1180px] mx-auto px-4">
+      {# Additional content section #}
+      <div class="grid xl:grid-cols-2 md:grid-cols-[30%_70%] items-right">
+        <div class="relative md:block hidden">
+          <img src="{{ asset('images/assets/play_triangle.svg') }}" alt="" class="absolute right-30 -top-10 -rotate-45 origin-center w-full z-1" />
+        </div>
+
+        <div class="text-right pt-10">
+          <h2 class="font-black text-tertiary md:text-7xl text-4xl mb-5">Kunnen wij jou ook inspireren?</h2>
+          <p class="text-body leading-9">Dat is fijn om te horen! Dan kunnen we samen ons vizier op scherp zetten en gaan voor die goal! Wij kunnen niet wachten en neem vandaag nog contact met ons op. Bel of mail gerust!</p>
+
+          <div class="mt-10 flex justify-end gap-4">
+            {% include 'components/button.html.twig' with {
+              class: 'w-[310px]',
+              href: '/contact',
+              label: 'Neem contact op',
+              iconStart: true,
+              color: 'is-tertiary',
+              size: 'is-small',
+            } %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

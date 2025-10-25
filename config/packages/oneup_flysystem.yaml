@@ -1,0 +1,12 @@
+oneup_flysystem:
+    adapters:
+        uploads_adapter:
+            awss3v3:
+                client: 'app.s3_client'
+                bucket: 'default-jopi'
+                prefix: 'uploads'
+
+    filesystems:
+        uploads_filesystem:
+            adapter: uploads_adapter
+            mount: uploads_filesystem

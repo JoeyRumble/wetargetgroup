@@ -1,0 +1,128 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+  <header class="relative text-white lg:h-[440px] md:h-[340px] h-[300px] w-full bg-cover" style="background-image: url('{{ asset('images/assets/bg_wetarget_gradient.jpg') }}');">
+    <div class="max-w-[1000px] mx-auto px-4 h-full flex items-center justify-center relative z-10 pt-30">
+      <h1 class="xl:text-[83px] lg:text-7xl md:text-6xl text-5xl text-center text-secondary leading-[1] font-extrabold md:font-black relative text-stroke-width-3 tracking-[-4px] mb-10 paint-order-stroke-fill text-stroke-white delay-[300ms] duration-[600ms] taos:scale-[0.6] taos:opacity-0" data-taos-offset="100">Voor deze klanten hebben wij al flink gescoord!</h1>
+    </div>
+    <div class="absolute w-full overflow-hidden -bottom-[1px] h-[870px] pointer-events-none">
+      <svg class="absolute w-[3840px] h-[870px] bottom-0 left-1/2 -translate-x-1/2" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 3840 870">
+        <g>
+          <path style="fill: #fff;stroke:none;" d="M3291,1.2c-1.8,62.4-10.4,124.4-25.8,186.1-39.2,155.1-115.1,290.9-227.5,407.4-112.2,116.6-244.6,196.9-397.2,240.9-152.3,43.2-307.6,45.7-465.9,7.6L0,301.8v568.2h3840V1.2h-549Z"/>
+        </g>
+      </svg>
+    </div>
+  </header>
+
+  <section class="flex w-full relative lg:py-40 md:py-20 py-10 px-4 delay-[300ms] duration-[600ms] taos:scale-[0.6] taos:opacity-0" data-taos-offset="100">
+    <div class="max-w-[1180px] mx-auto w-full">
+      <div class="grid md:grid-cols-2 grid-cols-1 gap-6 mb-16">
+        <div>
+          <h2 class="text-secondary font-black xl:text-7xl lg:text-6xl md:text-5xl text-3xl leading-[.9] tracking-tight">Wil je ook aanpakken en doorpakken?</h2>
+        </div>
+
+        <div class="text-body lg:text-xl mb-8">
+          <p class="leading-[2]">Dichtbij. Of juist ver weg. Over de hele wereld laten we zien hoe onze creativiteit uit het oosten voor jou het verschil maakt. Hoe we met alle mogelijke middelen de basis leggen voor een écht sterk merk. Daarbij maakt het niet uit of het gaat om doordachte positioneringen, gekke roadshows, slimme social campagnes of buitengewone beursstands. Creativiteit hebben we, de rest maken we. Kijk zelf maar.</p>
+        </div>
+      </div>
+
+      <div class="md:flex hidden gap-6 justify-center" id="categories">
+        {% include 'components/button.html.twig' with {
+            label: 'Alles',
+            size: 'is-small',
+            color: not app.request.get('category') ? 'is-primary' : null,
+            href: '/cases',
+          } %}
+        {% include 'components/button.html.twig' with {
+            label: 'Business',
+            size: 'is-small',
+            color: 'is-tertiary',
+            href: '/cases?category=Business',
+            inverted: app.request.get('category') == 'Business'
+          } %}
+        {% include 'components/button.html.twig' with {
+            label: 'People',
+            size: 'is-small',
+            href: '/cases?category=People',
+            inverted: app.request.get('category') == 'People'
+          } %}
+        {% include 'components/button.html.twig' with {
+            label: 'Events',
+            size: 'is-small',
+            color: 'is-secondary',
+            href: '/cases?category=Events',
+            inverted: app.request.get('category') == 'Events'
+          } %}
+      </div>
+
+
+      {# CASES LIST #}
+      <div class="grid grid-cols-1 gap-10 mt-10">
+        {% for case in cases %}
+          <div class="flex flex-col lg:h-[380px] h-[320px] md:p-12 p-8 relative overflow-hidden rounded-4xl  duration-200 shadow-2xl group transform transition-transform hover:scale-103" id="case">
+            {% if case.imageFileName %}
+              <div class="absolute w-full h-full top-0 left-0 -z-10 bg-cover bg-center" style="background-image: url('{{ vich_uploader_asset(case, 'imageFile') }}');"></div>
+              <div class="absolute w-full h-full top-0 left-0 -z-10 pointer-events-none"
+                 style="background: linear-gradient(to top, #00000050 30%, transparent 100%);"></div>
+            {% endif %}
+            <div class="flex gap-2">
+              {% for category in case.categories %}
+                {% set color =
+                  category == 'Business' ? 'text-tertiary' :
+                  category == 'People' ? 'text-primary' :
+                  category == 'Events' ? 'text-secondary' :
+                  'text-gray-700' %}
+                <span class="bg-white {{ color }} w-[170px] h-[30px] tracking-widest uppercase rounded-full text-center flex items-center justify-center">{{ category }}</span>
+              {% endfor %}
+            </div>
+            <div class="mt-auto flex items-center md:flex-row flex-col gap-4">
+              <h3 class="xl:text-7xl lg:text-6xl text-4xl text-white font-black tracking-tight mr-auto">{{ case.title }}</h3>
+              <div class="w-full md:w-auto">
+                {% include 'components/button.html.twig' with {
+                  class: 'md:w-[290px] w-full',
+                  href: path('cases_show', {'slug': case.slug}),
+                  label: 'Bekijk case',
+                  color: 'is-white',
+                  outlined: true,
+                  iconStart: true,
+                  fill: 'fill-white',
+                } %}
+              </div>
+            </div>
+
+            <a href="{{ path('cases_show', {'slug': case.slug}) }}" class="absolute bottom-0 left-0 right-0 h-full w-full "></a>
+          </div>
+        {% else %}
+          <p class="text-content">Geen cases gevonden.</p>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="w-full">
+    <div class="max-w-[1180px] mx-auto px-4">
+      {# Additional content section #}
+      <div class="grid xl:grid-cols-2 md:grid-cols-[30%_70%] items-right">
+        <div class="relative md:block hidden">
+          <img src="{{ asset('images/assets/play_triangle.svg') }}" alt="" class="absolute right-30 -top-10 -rotate-45 origin-center w-full z-1" />
+        </div>
+
+        <div class="text-right pt-10">
+          <h2 class="font-black text-secondary md:text-7xl text-4xl mb-5">Kunnen wij jou ook inspireren?</h2>
+          <p class="text-body leading-9">Dat is fijn om te horen! Dan kunnen we samen ons vizier op scherp zetten en gaan voor die goal! Wij kunnen niet wachten en neem vandaag nog contact met ons op. Bel of mail gerust!</p>
+
+          <div class="mt-10 flex justify-end gap-4">
+            {% include 'components/button.html.twig' with {
+              class: 'w-[310px]',
+              href: '/contact',
+              label: 'Neem contact op',
+              color: 'is-secondary',
+              iconStart: true,
+              size: 'is-small',
+            } %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

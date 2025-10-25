@@ -1,0 +1,63 @@
+@import "tailwindcss";
+@import "./components";
+/* @import "./fonts-local"; */
+@import "./fonts";
+
+@theme {
+    --color-primary: #eb125f;
+    --color-secondary: #2f1049;
+    --color-tertiary: #00225e;
+    --color-body: #9685b3;
+    --font-averta: 'Averta', sans-serif;
+    --tracking-tighter: -0.06em;
+}
+
+@keyframes bg-move {
+    0% {
+        /* Right center edge with margin */
+        transform: scale(1.5) translate(18%, 0%) rotate(-2deg);
+    }
+    16% {
+        /* Move up right with margin */
+        transform: scale(1.5) translate(18%, -9%) rotate(-1deg);
+    }
+    33% {
+        /* Back to Top left with margin */
+        transform: scale(1.5) translate(-18%, -18%) rotate(0deg);
+    }
+    50% {
+        /* Top left corner with margin */
+        transform: scale(1.5) translate(-18%, -18%) rotate(0deg);
+    }
+    66% {
+        /* Move down left with margin */
+        transform: scale(1.5) translate(-18%, 0%) rotate(1deg);
+    }
+    83% {
+        /* Bottom left corner with margin */
+        transform: scale(1.5) translate(-18%, 18%) rotate(2deg);
+    }
+    100% {
+        /* Move to bottom right with margin */
+        transform: scale(1.5) translate(18%, 18%) rotate(1deg);
+    }
+}
+
+@keyframes wiggle-rotate {
+    0% {
+        /* Right center edge with margin */
+        transform: rotate(30deg);
+    }
+    40% {
+        /* Right center edge with margin */
+        transform: rotate(30deg);
+    }
+    70% {
+        /* Top left corner with margin */
+        transform: rotate(-10deg);
+    }
+    100% {
+        /* Move to bottom right with margin */
+        transform: rotate(0deg);
+    }
+}

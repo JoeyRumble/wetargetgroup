@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en" class="w-[100vw] overflow-x-hidden">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{{ page.seoTitle ?? page.title }}{% endblock %}</title>
+    <meta name="description" content="{% block meta_description %}{{ page.seoDescription }}{% endblock %}">
+    <meta name="keywords" content="{{ page.seoKeywords|default('') }}">
+    <meta name="author" content="{{ page.seoAuthor|default('') }}">
+    <meta name="robots" content="{{ page.seoRobots|default('index, follow') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="turbo-visit-control" content="reload">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('favicons/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicons/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicons/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ asset('favicons/site.webmanifest') }}">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="facebook-domain-verification" content="22882qe8w0yywo7allt5q5lkrpy888" />
+
+    <meta property="twitter:url" content="https://www.instagram.com/wetarget/">
+    <meta property="twitter:url" content="https://www.linkedin.com/company/wetargetnl/about/">
+    <meta property="twitter:url" content="https://www.facebook.com/wetarget">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:image" content="{{ asset('images/logo/wetarget-logo.jpeg') }}">
+    <meta property="twitter:title" content="{{ page.seoTitle ?? page.title }} | WeTarget">
+    <meta property="twitter:description" content="">
+    <meta property="og:url" content="https://www.instagram.com/wetarget/">
+    <meta property="og:url" content="https://www.linkedin.com/company/wetargetnl/about/">
+    <meta property="og:url" content="https://www.facebook.com/wetarget">
+    <meta property="og:image" content="{{ asset('images/logo/wetarget-logo.jpeg') }}">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="nl_NL">
+    <meta property="og:image:alt" content="WeTarget | Personeel nodig?">
+    <meta property="og:title" content="{{ page.seoTitle ?? page.title }} | WeTarget">
+    <meta property="og:description" content="">
+
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+</head>
+<body class="bg-white text-gray-900 font-averta w-[100vw] overflow-x-hidden">
+    <header class="w-full absolute top-0 left-0 h-[102px] z-[999]">
+        <div class="max-w-[1625px] mx-auto px-4">
+            <div class="flex items-center justify-between py-4">
+                <!-- Logo -->
+                <div class="flex-shrink-0 mr-auto">
+                    <a href="/" class="text-xl font-bold text-gray-800">
+                        <img src="{{ asset('images/logo/logo_payoff.svg') }}" alt="WeTarget" class="xl:h-15 h-10">
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden lg:flex items-center xl:space-x-10 space-x-6 border border-white rounded-full xl:px-6 px-5 h-12 ml-auto">
+                    <a href="{{ path('homepage') }}"
+                    class="uppercase transition {% if app.request.get('_route') == 'homepage' %}text-primary {% else %}text-white hover:text-primary{% endif %}">
+                        Home
+                    </a>
+                    <a href="{{ path('people') }}"
+                    class="uppercase transition {% if app.request.get('_route') == 'people' %}text-primary {% else %}text-white hover:text-primary{% endif %}">
+                        People
+                    </a>
+                    <a href="{{ path('business') }}"
+                    class="uppercase transition {% if app.request.get('_route') == 'business' %}text-primary {% else %}text-white hover:text-primary{% endif %}">
+                        Business
+                    </a>
+                    <a href="{{ path('events') }}"
+                    class="uppercase transition {% if app.request.get('_route') == 'events' %}text-primary {% else %}text-white hover:text-primary{% endif %}">
+                        Events
+                    </a>
+                    <a href="{{ path('cases') }}"
+                    class="uppercase transition {% if app.request.get('_route') == 'cases' %}text-primary {% else %}text-white hover:text-primary{% endif %}">
+                        Cases
+                    </a>
+                    <a href="{{ path('jobmarketing') }}"
+                    class="uppercase transition {% if app.request.get('_route') == 'jobmarketing' %}text-primary {% else %}text-white hover:text-primary{% endif %}">
+                        Jobmarketing
+                    </a>
+                    <a href="{{ path('contact') }}"
+                    class="uppercase transition {% if app.request.get('_route') == 'contact' %}text-primary {% else %}text-white hover:text-primary{% endif %}">
+                        Contact
+                    </a>
+                </nav>
+
+                <!-- Buttons -->
+                <div class="md:flex items-center xl:space-x-7 space-x-5 xl:ml-8 ml-4 hidden">
+                    <div class="flex flex-col items-center">
+                        <a href="https://dashboard.wetarget.nl/" class="rounded-full text-white h-[50px] w-[50px] flex items-center relative justify-center bg-[#ffffff20] hover:bg-[#ffffff40] transition">
+                            <span class="w-8 h-8 flex fill-white rotate-180">{{ source('@public_path'~asset('icons/login_icon.svg')) }}</span>
+
+                            <span class="mt-1 text-white opacity-40 absolute top-full text-center left-1/2 -translate-x-1/2 xl:text-base text-sm">inloggen</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-toggle" class="lg:hidden flex items-center justify-center w-10 h-10 text-white focus:outline-none ml-8" aria-label="Open menu">
+                    <svg class="w-12 h-12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+        </div>
+
+        {# --- MOBILE MENU OVERLAY --- #}
+        <div id="mobile-menu" class="fixed inset-0 bg-secondary bg-opacity-95 z-[999] flex-col items-center justify-center hidden lg:hidden transition-all duration-300">
+            <button id="mobile-menu-close" class="absolute top-6 right-6 text-white text-4xl" aria-label="Close menu">&times;</button>
+            <ul class="flex flex-col gap-8 text-white font-black text-2xl items-center justify-center h-full">
+                <li><a href="{{ path('homepage') }}" class="hover:text-primary">Home</a></li>
+                <li><a href="{{ path('cases') }}" class="hover:text-primary">Cases</a></li>
+                <li><a href="{{ path('business') }}" class="hover:text-primary">Business</a></li>
+                <li><a href="{{ path('people') }}" class="hover:text-primary">People</a></li>
+                <li><a href="{{ path('events') }}" class="hover:text-primary">Events</a></li>
+                <li><a href="{{ path('jobmarketing') }}" class="hover:text-primary">Jobmarketing</a></li>
+                <li><a href="{{ path('contact') }}" class="hover:text-primary">Contact</a></li>
+
+                <li class="mt-8"><a href="https://dashboard.wetarget.nl/" class="hover:text-primary">Inloggen</a></li>
+            </ul>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var menu = document.getElementById('mobile-menu');
+                var openBtn = document.getElementById('mobile-menu-toggle');
+                var closeBtn = document.getElementById('mobile-menu-close');
+                if (openBtn && menu) {
+                    openBtn.addEventListener('click', function() {
+                        menu.classList.remove('hidden');
+                    });
+                }
+                if (closeBtn && menu) {
+                    closeBtn.addEventListener('click', function() {
+                        menu.classList.add('hidden');
+                    });
+                }
+                // Close menu on link click (mobile)
+                menu && menu.querySelectorAll('a').forEach(function(link) {
+                    link.addEventListener('click', function() {
+                        menu.classList.add('hidden');
+                    });
+                });
+            });
+        </script>
+    </header>
+
+    <main class="w-full relative">
+        {% block body %}{% endblock %}
+
+        <span class="absolute w-[1000px] h-[1000px] -bottom-[300px] -right-[300px] md:opacity-20 opacity-10 z-50 bg-contain bg-no-repeat pointer-events-none" style="background-image: url('{{ asset('images/assets/blockpattern_lines_reverse.svg') }}');"></span>
+    </main>
+
+    <footer class="w-full bg-cover relative overflow-hidden h-[375px]" style="background-image: url('{{ asset('images/assets/bg_wetarget_gradient.jpg') }}');">
+        <div class="absolute w-full overflow-hidden top-0 h-[870px] pointer-events-none">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" class="absolute w-[3840px] h-[374px] top-0 left-1/2 -translate-x-1/2"  viewBox="0 0 3840 374">
+                <defs>
+                    <g id="Layer0_0_FILL">
+                        <path fill="#FFFFFF" stroke="none" d="
+                        M 3840 291.05
+                        L 3840 0 0 0 0 374 762.65 374
+                        Q 783.15 340.45 807.35 308.3 932.95 141.3 1121.75 60.95 1310.4 -18.25 1519.4 5.8
+                        L 3840 291.05 Z"/>
+                    </g>
+                </defs>
+
+                <g transform="matrix( 1, 0, 0, 1, 0,0) ">
+                    <use xlink:href="#Layer0_0_FILL"/>
+                </g>
+            </svg>
+        </div>
+
+        <div class="max-w-[1625px] mx-auto px-4">
+            <div class="flex items-center justify-between lg:pt-50 pt-40 lg:gap-4 gap-10 flex-col lg:flex-row">
+                <!-- Logo -->
+                <div class="flex-shrink-0 xl:w-[280px]">
+                    <a href="/" class="text-xl font-bold text-gray-800">
+                        <img src="{{ asset('images/logo/logo_wit.svg') }}" alt="WeTarget" class="xl:h-12 h-8 lg:mr-3">
+                    </a>
+                </div>
+
+                <!-- Menu -->
+                <nav class="lg:flex hidden items-center xl:space-x-10 space-x-6 border border-white rounded-full xl:px-6 px-5 h-12 ml-auto mr-auto">
+                    <a href="{{ path('homepage') }}"
+                    class="uppercase transition {% if app.request.get('_route') == 'homepage' %}text-primary {% else %}text-white hover:text-primary{% endif %}">
+                        Home
+                    </a>
+                    <a href="{{ path('people') }}"
+                    class="uppercase transition {% if app.request.get('_route') == 'people' %}text-primary {% else %}text-white hover:text-primary{% endif %}">
+                        People
+                    </a>
+                    <a href="{{ path('business') }}"
+                    class="uppercase transition {% if app.request.get('_route') == 'business' %}text-primary {% else %}text-white hover:text-primary{% endif %}">
+                        Business
+                    </a>
+                    <a href="{{ path('events') }}"
+                    class="uppercase transition {% if app.request.get('_route') == 'events' %}text-primary {% else %}text-white hover:text-primary{% endif %}">
+                        Events
+                    </a>
+                    <a href="{{ path('cases') }}"
+                    class="uppercase transition {% if app.request.get('_route') == 'cases' %}text-primary {% else %}text-white hover:text-primary{% endif %}">
+                        Cases
+                    </a>
+                    <a href="{{ path('jobmarketing') }}"
+                    class="uppercase transition {% if app.request.get('_route') == 'jobmarketing' %}text-primary {% else %}text-white hover:text-primary{% endif %}">
+                        Jobmarketing
+                    </a>
+                    <a href="{{ path('contact') }}"
+                    class="uppercase transition {% if app.request.get('_route') == 'contact' %}text-primary {% else %}text-white hover:text-primary{% endif %}">
+                        Contact
+                    </a>
+                </nav>
+
+                <!-- Buttons -->
+                <div class="flex items-center space-x-4 lg:w-[280px]">
+                    <div class="flex flex-col items-center">
+                        <a href="tel:0174257221" class="rounded-full text-white h-[50px] w-[50px] flex items-center relative justify-center bg-[#ffffff20] hover:bg-[#ffffff40] transition">
+                            <span class="w-8 h-8 flex fill-white">{{ source('@public_path'~asset('icons/telephone_icon.svg')) }}</span>
+                        </a>
+                    </div>
+
+                    <div class="flex flex-col items-center">
+                        <a href="mailto:info@wetarget.nl" class="rounded-full text-white h-[50px] w-[50px] flex items-center relative justify-center bg-[#ffffff20] hover:bg-[#ffffff40] transition">
+                            <span class="w-8 h-8 flex fill-white">{{ source('@public_path'~asset('icons/mail_icon.svg')) }}</span>
+                        </a>
+                    </div>
+
+                    <div class="flex flex-col items-center">
+                        <a href="https://www.google.com/maps/dir/?api=1&origin=&destination=wetarget-naaldwijk" target="_blank" class="rounded-full text-white h-[50px] w-[50px] flex items-center relative justify-center bg-[#ffffff20] hover:bg-[#ffffff40] transition">
+                            <span class="w-8 h-8 flex fill-white">{{ source('@public_path'~asset('icons/location_icon.svg')) }}</span>
+                        </a>
+                    </div>
+
+                    <div class="flex flex-col items-center">
+                        <a href="https://www.linkedin.com/company/wetargetnl/about/" target="_blank" class="rounded-full text-white h-[50px] w-[50px] flex items-center relative justify-center bg-[#ffffff20] hover:bg-[#ffffff40] transition">
+                            <span class="w-6 h-6 flex fill-white">{{ source('@public_path'~asset('icons/linkedin_icon.svg')) }}</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-10">
+                <p class="text-white uppercase text-[10px] opacity-40 !tracking-wider">
+                    Copyright {{ "now"|date("Y") }} WeTarget group. Alle rechten voorbehouden
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

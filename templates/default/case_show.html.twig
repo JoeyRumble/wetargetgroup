@@ -1,0 +1,122 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+  <header class="relative text-white lg:h-[440px] md:h-[340px] h-[300px] w-full bg-cover" style="background-image: url('{{ asset('images/assets/bg_wetarget_gradient.jpg') }}');">
+    <div class="max-w-[1000px] mx-auto px-4 h-full flex items-center justify-center relative z-10 pt-30">
+      <h1 class="lg:text-7xl md:text-6xl text-5xl  text-center text-secondary leading-[1] font-extrabold md:font-black relative text-stroke-width-3 tracking-[-4px] mb-10 paint-order-stroke-fill text-stroke-white delay-[300ms] duration-[600ms] taos:scale-[0.6] taos:opacity-0" data-taos-offset="100">{{ case.title }}</h1>
+    </div>
+    <div class="absolute w-full overflow-hidden -bottom-[1px] h-[870px] pointer-events-none">
+      <svg class="absolute w-[3840px] h-[870px] bottom-0 left-1/2 -translate-x-1/2" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 3840 870">
+        <g>
+          <path style="fill: #fff;stroke:none;" d="M3291,1.2c-1.8,62.4-10.4,124.4-25.8,186.1-39.2,155.1-115.1,290.9-227.5,407.4-112.2,116.6-244.6,196.9-397.2,240.9-152.3,43.2-307.6,45.7-465.9,7.6L0,301.8v568.2h3840V1.2h-549Z"/>
+        </g>
+      </svg>
+    </div>
+  </header>
+
+  <section class="flex w-full relative md:-mt-15 pb-20 delay-[300ms] duration-[600ms] taos:scale-[0.6] taos:opacity-0" data-taos-offset="100">
+    <div class="max-w-[1180px] mx-auto px-4">
+      {# Banner image #}
+      {% if case.imageFileName %}
+        <div class="w-full lg:h-[380px] md:h-[320px] h-[200px] rounded-4xl overflow-hidden mb-10 bg-cover bg-center relative z-40 delay-[300ms] duration-[600ms] taos:scale-[0.6] taos:opacity-0" data-taos-offset="100" style="background-image: url('{{ vich_uploader_asset(case, 'imageFile') }}');"></div>
+      {% endif %}
+
+      {# Categories badges #}
+      <div class="flex gap-2 mb-10">
+        {% for category in case.categories %}
+          {% set color =
+            category == 'Business' ? 'border-tertiary text-tertiary' :
+            category == 'People' ? 'border-primary text-primary' :
+            category == 'Events' ? 'border-secondary text-secondary' :
+            'border-gray-300 text-gray-700' %}
+          <span class="bg-white border {{ color }} w-[170px] h-[30px] tracking-widest uppercase rounded-full text-center flex items-center justify-center border">{{ category }}</span>
+        {% endfor %}
+      </div>
+
+      {# First row: Title + Text #}
+      <div class="grid md:grid-cols-2 md:space-x-15 md:mb-16 mb-10">
+        <div>
+          <h2 class="xl:text-[83px] lg:text-6xl md:text-5xl text-3xl leading-[.9] text-secondary font-black mb-4">{{ case.subpageTitleFirst }}</h2>
+        </div>
+        <div>
+          <div class="default-content">{{ case.subpageTextFirst|raw }}</div>
+        </div>
+      </div>
+
+      {# Second row: Text left, image right #}
+      <div class="grid md:grid-cols-2 md:space-x-15 mb-26 items-center justify-center">
+        <div class="order-2 md:order-1 md:mt-0 mt-5">
+          <div class="default-content">
+            <h2 class="text-secondary">{{ case.subpageTitleSecond }}</h2>
+            {{ case.subpageTextSecond|raw }}
+          </div>
+        </div>
+        <div class="order-1">
+          {% if case.subpageImageSecondFileName %}
+            <img src="{{ vich_uploader_asset(case, 'subpageImageSecondFile') }}" alt="" />
+          {% endif %}
+        </div>
+      </div>
+
+      {# Third row: Image left, text right #}
+      <div class="grid md:grid-cols-2 md:space-x-15 mb-26 items-center">
+        <div>
+          {% if case.subpageImageThirdFileName %}
+            <img src="{{ vich_uploader_asset(case, 'subpageImageThirdFile') }}" alt="" />
+          {% endif %}
+        </div>
+
+        <div>
+          <div class="default-content">
+            <h2 class="text-secondary">{{ case.subpageTitleThird }}</h2>
+            {{ case.subpageTextThird|raw }}
+          </div>
+        </div>
+      </div>
+
+      {# Fourth row: Image right, text left #}
+      <div class="grid md:grid-cols-2 md:space-x-15 mb-16 items-center justify-center">
+        <div class="order-2 md:order-1 md:mt-0 mt-5">
+          <div class="default-content">
+            <h2 class="text-secondary">{{ case.subpageTitleFourth }}</h2>
+            {{ case.subpageTextFourth|raw }}
+          </div>
+        </div>
+        <div class="order-1">
+          {% if case.subpageImageFourthFileName %}
+            <img src="{{ vich_uploader_asset(case, 'subpageImageFourthFile') }}" alt="" />
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="w-full">
+    <div class="max-w-[1180px] mx-auto px-4">
+      {# Additional content section #}
+      <div class="grid xl:grid-cols-2 md:grid-cols-[30%_70%] items-right">
+        <div class="relative md:block hidden">
+          <img src="{{ asset('images/assets/play_triangle.svg') }}" alt="" class="absolute right-30 -top-10 -rotate-45 origin-center w-full z-1" />
+        </div>
+
+        <div class="text-right pt-10">
+          <h2 class="font-black text-secondary md:text-7xl text-4xl mb-5">Kunnen wij jou ook inspireren?</h2>
+          <p class="text-body leading-9">Dat is fijn om te horen! Dan kunnen we samen ons vizier op scherp zetten en gaan voor die goal! Wij kunnen niet wachten en neem vandaag nog contact met ons op. Bel of mail gerust!</p>
+
+          <div class="mt-10 flex justify-end gap-4">
+            {% include 'components/button.html.twig' with {
+              class: 'w-[310px]',
+              href: '/contact',
+              label: 'Neem contact op',
+              color: 'is-secondary',
+              iconStart: true,
+              size: 'is-small',
+            } %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

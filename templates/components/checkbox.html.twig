@@ -1,0 +1,9 @@
+{# checkbox.html.twig #}
+<div class="field">
+  <div class="control">
+    <label class="checkbox">
+      <input type="checkbox" name="{{ name|default('') }}" value="{{ value|default('1') }}" {{ checked ? 'checked' : '' }}>
+      {{ label }}
+    </label>
+  </div>
+</div>

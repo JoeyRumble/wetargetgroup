@@ -1,0 +1,11 @@
+{# radio.html.twig #}
+<div class="field">
+  {% for option in options %}
+    <div class="control">
+      <label class="radio">
+        <input type="radio" name="{{ name }}" value="{{ option.value }}" {{ option.value == selected ? 'checked' : '' }}>
+        {{ option.label }}
+      </label>
+    </div>
+  {% endfor %}
+</div>

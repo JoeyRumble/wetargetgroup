@@ -1,0 +1,143 @@
+@font-face {
+    font-family: 'Averta';
+    src: url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-black.eot');
+    src: url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-black.eot?#iefix') format('embedded-opentype'),
+        url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-black.woff2') format('woff2'),
+        url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-black.woff') format('woff'),
+        url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-black.ttf') format('truetype'),
+        url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-black.svg#averta_stdblack') format('svg');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Averta';
+    src: url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-blackitalic.eot');
+    src: url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-blackitalic.eot?#iefix') format('embedded-opentype'),
+        url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-blackitalic.woff2') format('woff2'),
+        url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-blackitalic.woff') format('woff'),
+        url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-blackitalic.ttf') format('truetype'),
+        url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-blackitalic.svg#averta_stdblack_italic') format('svg');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Averta';
+    src: url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-bold.eot');
+    src: url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-bold.eot?#iefix') format('embedded-opentype'),
+        url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-bold.woff2') format('woff2'),
+        url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-bold.woff') format('woff'),
+        url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-bold.ttf') format('truetype'),
+        url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-bold.svg#averta_stdbold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Averta';
+    src: url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-bolditalic.eot');
+    src: url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-bolditalic.eot?#iefix') format('embedded-opentype'),
+        url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-bolditalic.woff2') format('woff2'),
+        url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-bolditalic.woff') format('woff'),
+        url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-bolditalic.ttf') format('truetype'),
+        url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-bolditalic.svg#averta_stdbold_italic') format('svg');
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Averta';
+    src: url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-extrabold.eot');
+    src: url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-extrabold.eot?#iefix') format('embedded-opentype'),
+        url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-extrabold.woff2') format('woff2'),
+        url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-extrabold.woff') format('woff'),
+        url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-extrabold.ttf') format('truetype'),
+        url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-extrabold.svg#averta_stdextrabold') format('svg');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Averta';
+    src: url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-extrabolditalic.eot');
+    src: url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-extrabolditalic.eot?#iefix') format('embedded-opentype'),
+        url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-extrabolditalic.woff2') format('woff2'),
+        url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-extrabolditalic.woff') format('woff'),
+        url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-extrabolditalic.ttf') format('truetype'),
+        url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-extrabolditalic.svg#averta_stdextrabold_italic') format('svg');
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Averta';
+    src: url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-light.eot');
+    src: url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-light.eot?#iefix') format('embedded-opentype'),
+        url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-light.woff2') format('woff2'),
+        url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-light.woff') format('woff'),
+        url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-light.ttf') format('truetype'),
+        url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-light.svg#averta_stdlight') format('svg');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Averta';
+    src: url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-lightitalic.eot');
+    src: url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-lightitalic.eot?#iefix') format('embedded-opentype'),
+        url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-lightitalic.woff2') format('woff2'),
+        url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-lightitalic.woff') format('woff'),
+        url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-lightitalic.ttf') format('truetype'),
+        url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-lightitalic.svg#averta_stdlight') format('svg');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Averta';
+    src: url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-regular.eot');
+    src: url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-regular.eot?#iefix') format('embedded-opentype'),
+        url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-regular.woff2') format('woff2'),
+        url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-regular.woff') format('woff'),
+        url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-regular.ttf') format('truetype'),
+        url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-regular.svg#averta_stdregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Averta';
+    src: url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-regularitalic.eot');
+    src: url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-regularitalic.eot?#iefix') format('embedded-opentype'),
+        url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-regularitalic.woff2') format('woff2'),
+        url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-regularitalic.woff') format('woff'),
+        url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-regularitalic.ttf') format('truetype'),
+        url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-regularitalic.svg#averta_stdregular') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Averta';
+    src: url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-semibold.eot');
+    src: url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-semibold.eot?#iefix') format('embedded-opentype'),
+        url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-semibold.woff2') format('woff2'),
+        url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-semibold.woff') format('woff'),
+        url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-semibold.ttf') format('truetype'),
+        url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-semibold.svg#averta_stdsemibold') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Averta';
+    src: url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-semibolditalic.eot');
+    src: url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-semibolditalic.eot?#iefix') format('embedded-opentype'),
+        url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-semibolditalic.woff2') format('woff2'),
+        url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-semibolditalic.woff') format('woff'),
+        url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-semibolditalic.ttf') format('truetype'),
+        url('https://localhost:3000/fonts/averta/intelligent_design_-_avertastd-semibolditalic.svg#averta_stdsemibold_italic') format('svg');
+    font-weight: 500;
+    font-style: italic;
+}

@@ -1,0 +1,9 @@
+{# textarea.html.twig #}
+<div class="field">
+  {% if label is defined %}
+    <label class="label">{{ label }}</label>
+  {% endif %}
+  <div class="control">
+    <textarea class="textarea {{ color|default('') }}" name="{{ name|default('') }}" placeholder="{{ placeholder|default('') }}">{{ value|default('') }}</textarea>
+  </div>
+</div>

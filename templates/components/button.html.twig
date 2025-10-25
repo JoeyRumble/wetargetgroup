@@ -1,0 +1,15 @@
+{# button.html.twig #}
+<a href="{{ href|default('#') }}"
+   class="button {{ size|default('') }} {{ color|default('is-primary') }}{% if outlined is defined and outlined %} is-outlined{% endif %}{% if inverted is defined and inverted %} is-inverted{% endif %}{% if rounded is defined and rounded %} is-rounded{% endif %} {{ class|default('') }}">
+  {% if iconStart is defined and iconStart %}
+    <span class="button-icon">
+      {{ source('@public_path'~asset('icons/play_icon.svg')) }}
+    </span>
+  {% endif %}
+  <span>{{ label|raw }}</span>
+  {% if iconEnd is defined and iconEnd %}
+    <span class="button-icon">
+      {{ source('@public_path'~asset('icons/play_icon.svg')) }}
+    </span>
+  {% endif %}
+</a>

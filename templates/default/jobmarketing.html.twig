@@ -1,0 +1,176 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+  <header class="relative text-white lg:h-[440px] md:h-[340px] h-[300px] w-full bg-cover" style="background-image: url('{{ asset('images/assets/bg_wetarget_gradient.jpg') }}');">
+    <div class="max-w-[1000px] mx-auto px-4 h-full flex items-center justify-center relative z-10 pt-30">
+      <h1 class="lg:text-7xl md:text-6xl text-5xl  text-center text-secondary leading-[1] font-extrabold md:font-black relative text-stroke-width-3 tracking-[-4px] mb-10 paint-order-stroke-fill text-stroke-white delay-[300ms] duration-[600ms] taos:scale-[0.6] taos:opacity-0" data-taos-offset="100">Wij bereiken jouw doelgroep op de kanalen waar zij actief op zijn</h1>
+    </div>
+    <div class="absolute w-full overflow-hidden -bottom-[1px] h-[870px] pointer-events-none">
+      <svg class="absolute w-[3840px] h-[870px] bottom-0 left-1/2 -translate-x-1/2" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 3840 870">
+        <g>
+          <path style="fill: #fff;stroke:none;" d="M3291,1.2c-1.8,62.4-10.4,124.4-25.8,186.1-39.2,155.1-115.1,290.9-227.5,407.4-112.2,116.6-244.6,196.9-397.2,240.9-152.3,43.2-307.6,45.7-465.9,7.6L0,301.8v568.2h3840V1.2h-549Z"/>
+        </g>
+      </svg>
+    </div>
+  </header>
+
+  <section class="w-full py-20 delay-[300ms] duration-[600ms] taos:scale-[0.6] taos:opacity-0" data-taos-offset="100">
+    <div class="max-w-[1180px] mx-auto px-4">
+      <div class="mx-auto max-w-[900px] text-center mb-10">
+        <h2 class="md:text-5xl text-4xl leading-[.9] text-secondary font-black mb-10">Ken je kanalen</h2>
+
+        <p class="text-body md:text-2xl text-xl tracking-tight leading-[1.5]">Met data, creatieve marketing en sterke content bereiken we niet alleen jouw doelgroep op de juiste kanalen, maar overtuigen we ze om in actie te komen.</p>
+      </div>
+
+      <div class="text-center md-block hidden">
+        <img src="{{ asset('images/assets/jobmarketing-desktop.png') }}" alt="" />
+      </div>
+
+      <div class="grid md:grid-cols-[30%_70%] xl:space-x-20 md:space-x-10 mb-16 justify-center md:pt-30 pt-10">
+        <div class="relative md:block hidden">
+          <img src="{{ asset('images/assets/jobmarketing-social-advertising.png') }}" alt="" class="absolute right-0 max-w-none" />
+        </div>
+        <div>
+          <h2 class="md:text-5xl text-4xl tracking-tight leading-[.9] text-secondary font-black mb-10">Wij weten waar en wanneer welke advertentie werkt</h2>
+          <div class="relative md:hidden block">
+            <img src="{{ asset('images/assets/jobmarketing-social-advertising.png') }}" alt="" />
+          </div>
+          <h3 class="md:text-3xl text-2xl tracking-tight my-10 font-medium text-primary">Social job advertising</h3>
+
+          <div class="grid grid-cols-[40px_1fr] gap-8">
+            <div>
+              <img src="{{ asset('images/assets/check.png') }}" alt="" />
+            </div>
+
+            <div class="default-content">
+              <h3 class="text-secondary">Gebruik de juiste kanalen</h3>
+              <p>Bijna iedereen maakt gebruik van social media. Er zit alleen wel wat verschil in wie welk medium gebruikt. Wij zijn op de hoogte van de trends en ontwikkelingen om zo jouw doelgroep te bereiken. Een salesmanager binnenhalen via LinkedIn of scholieren enthousiasmeren via TikTok? Geen probleem!</p>
+            </div>
+
+            <div>
+              <img src="{{ asset('images/assets/check.png') }}" alt="" />
+            </div>
+
+            <div class="default-content">
+              <h3 class="text-secondary">Verlaag de drempel</h3>
+              <p>Goede werknemers hebben deze tijd vaak al een baan. Zaak om het sollicitatieproces zo snel en gemakkelijk mogelijk te maken. WeTarget helpt met een simpele recruitment funnel om kandidaten eenvoudig te laten solliciteren waar en wanneer zij dat willen.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-[70%_30%] xl:space-x-20 md:space-x-10 mb-16 justify-center md:pt-30 pt-10">
+        <div>
+          <h2 class="md:text-5xl text-4xl tracking-tight leading-[.9] text-secondary font-black mb-10">Target jouw doelgroep</h2>
+          <div class="relative md:hidden block">
+            <img src="{{ asset('images/assets/jobmarketing-google-advertenties.png') }}" alt=""/>
+          </div>
+          <h3 class="md:text-3xl text-2xl tracking-tight my-10 font-medium text-primary">Google advertenties</h3>
+
+          <div class="grid grid-cols-[40px_1fr] gap-8">
+            <div>
+              <img src="{{ asset('images/assets/check.png') }}" alt="" />
+            </div>
+
+            <div class="default-content">
+              <h3 class="text-secondary">Google Search</h3>
+              <p>Zo bereiken wij kandidaten die al gegoogeld hebben naar bepaalde vacatures. Handig als je vooraf al weet dat er interesse is!</p>
+            </div>
+
+            <div>
+              <img src="{{ asset('images/assets/check.png') }}" alt="" />
+            </div>
+
+            <div class="default-content">
+              <h3 class="text-secondary">Google Display</h3>
+              <p>Maak gebruik van het Google Display Network met meer dan 2 miljoen aangesloten websites om jouw doelgroep te bereiken op de websites die zij bezoeken.</p>
+            </div>
+
+            <div>
+              <img src="{{ asset('images/assets/check.png') }}" alt="" />
+            </div>
+
+            <div class="default-content">
+              <h3 class="text-secondary">YouTube</h3>
+              <p>InStreem, Discovery of Bumber Ads. En als dat niet werkt kunnen we altijd even kijken naar In-feed, Masthead of Responsive Display Ads. Precies laat ons het maar uitzoeken.</p>
+            </div>
+          </div>
+        </div>
+        <div class="relative md:block hidden">
+          <img src="{{ asset('images/assets/jobmarketing-google-advertenties.png') }}" alt="" class="absolute left-0 max-w-none" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% if cases|length > 0 %}
+    <section class="flex w-full relative pt-20 py-12 px-4">
+      <div class="max-w-[1180px] mx-auto w-full">
+        <h2 class="text-white text-5xl md:text-7xl font-black w-full text-center text-stroke-secondary text-stroke-width-5 tracking-tight md:tracking-[-5px] paint-order-stroke-fill mb-20">Projecten</h2>
+
+        <div id="cases-grid" class="grid md:grid-cols-2 grid-cols-1 lg:grid-cols-3 gap-8 w-full">
+          {% for case in cases %}
+            <div class="flex-1 rounded-3xl md:h-[400px] h-[300px] overflow-hidden bg-cover bg-center relative after:absolute after:left-0 after:top-0 after:w-full after:h-full after:bg-gradient-to-t after:from-[#2f2048] after:-from-[18%] after:via-[rgba(47,32,72,0.5)] after:via-[50%] after:to-[rgba(47,32,72,0)] after:to-[130%] transition hover:opacity-80" style="background-image: url('{{ vich_uploader_asset(case, 'imageFile') }}'); display: {{ loop.index0 < 6 ? 'flex' : 'none' }};">
+              <div class="absolute left-0 bottom-0 p-10 z-[2]">
+                <span class="text-white font-bold text-2xl drop-shadow-lg">{{ case.title }}</span>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+
+        {% if cases|length > 6 %}
+          <div class="flex justify-center mt-8">
+            <button id="show-more-cases" class="button is-primary is-inverted is-small cursor-pointer">
+              <span>Toon meer</span>
+              <span class="button-icon">
+                {{ source('@public_path'~asset('icons/play_icon.svg')) }}
+              </span>
+            </button>
+          </div>
+        {% endif %}
+      </div>
+    </section>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const grid = document.getElementById('cases-grid');
+        const btn = document.getElementById('show-more-cases');
+        if (btn) {
+          btn.addEventListener('click', function () {
+            Array.from(grid.children).forEach(function (tile) {
+              tile.style.display = 'flex';
+            });
+            btn.style.display = 'none';
+          });
+        }
+      });
+    </script>
+  {% endif %}
+
+  <section class="w-full">
+    <div class="max-w-[1180px] mx-auto px-4">
+      {# Additional content section #}
+      <div class="grid xl:grid-cols-2 md:grid-cols-[30%_70%] items-right">
+        <div class="relative md:block hidden">
+          <img src="{{ asset('images/assets/play_triangle.svg') }}" alt="" class="absolute right-30 -top-10 -rotate-45 origin-center w-full z-1" />
+        </div>
+
+        <div class="text-right pt-10">
+          <h2 class="font-black text-secondary md:text-7xl text-4xl mb-5">Kunnen wij jou ook inspireren?</h2>
+          <p class="text-body leading-9">Dat is fijn om te horen! Dan kunnen we samen ons vizier op scherp zetten en gaan voor die goal! Wij kunnen niet wachten en neem vandaag nog contact met ons op. Bel of mail gerust!</p>
+
+          <div class="mt-10 flex justify-end gap-4">
+            {% include 'components/button.html.twig' with {
+              class: 'w-[310px]',
+              href: '/contact',
+              label: 'Neem contact op',
+              iconStart: true,
+              color: 'is-secondary',
+              size: 'is-small',
+            } %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

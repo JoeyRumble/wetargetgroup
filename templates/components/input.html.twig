@@ -1,0 +1,12 @@
+{# input.html.twig #}
+<div class="field">
+  {% if label is defined %}
+    <label class="label">{{ label }}</label>
+  {% endif %}
+  <div class="control">
+    <input class="input {{ color|default('') }}" type="{{ type|default('text') }}" name="{{ name|default('') }}" value="{{ value|default('') }}" placeholder="{{ placeholder|default('') }}">
+  </div>
+  {% if help is defined %}
+    <p class="help {{ helpColor|default('') }}">{{ help }}</p>
+  {% endif %}
+</div>

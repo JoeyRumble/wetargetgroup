@@ -1,0 +1,8 @@
+vich_uploader:
+    db_driver: orm
+    storage: flysystem
+    mappings:
+        custom_image:
+            upload_destination: oneup_flysystem.uploads_filesystem_filesystem
+            uri_prefix: https://default-jopi.s3.amazonaws.com/uploads
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer

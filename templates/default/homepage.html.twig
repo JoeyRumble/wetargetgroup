@@ -1,0 +1,342 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+  {# Mobile menu moved to base.html.twig #}
+
+  <header class="relative text-white min-h-[500px] xl:h-[870px] lg:h-[700px] h-[650px] w-full flex flex-col justify-center">
+    <div class="absolute inset-0 overflow-hidden z-0 pointer-events-none">
+      <div id="animation"
+        class="bg-cover bg-center w-[130%] h-[130%] left-[-15%] top-[-15%] absolute animate-[bg-move_40s_linear_infinite_alternate]"
+        style="background-image: url('{{ asset('images/assets/bg_wetarget_gradient.jpg') }}');"
+      ></div>
+    </div>
+    <div class="max-w-[1625px] h-full mx-auto px-4 relative w-full">
+      <span class="absolute w-[1200px] h-[1200px] -top-1/4 opacity-35 bg-contain bg-no-repeat right-1/2 md:right-3/5 pointer-events-none" style="background-image: url('{{ asset('images/assets/blockpattern_lines.svg') }}');"></span>
+      <div class="flex flex-col md:flex-row h-full relative z-10 pt-24 md:pt-0">
+        <div class="flex flex-col justify-center md:flex-1 lg:mr-[90px] h-[460px] md:h-[580px] delay-[300ms] duration-[600ms] taos:translate-x-[30%] taos:opacity-0" data-taos-offset="150">
+          <h1 class="text-white text-5xl md:text-6xl lg:text-7xl font-extrabold md:font-black tracking-tighter md:leading-tight">Vol energie naar een <span class="text-transparent text-stroke-white text-stroke-width-2 relative -bottom-2 md:-bottom-4 italic tracking-normal">NIEUWE</span><br /> manier van verbinden</h1>
+          <div class="flex flex-col sm:flex-row gap-5 mt-14 md:mt-14 w-full max-w-[600px]">
+            {% include 'components/button.html.twig' with {
+              class: 'w-full sm:w-[290px]',
+              href: '/cases',
+              label: 'Cases',
+              iconStart: true,
+              fill: 'fill-white',
+            } %}
+
+            {% include 'components/button.html.twig' with {
+              class: 'w-full sm:w-[290px]',
+              href: '/contact',
+              label: 'Contact',
+              color: 'is-white',
+              outlined: true,
+              iconStart: true,
+              fill: 'fill-white',
+            } %}
+          </div>
+        </div>
+
+        <div class="w-full md:w-[375px] h-auto xl:flex hidden items-end relative md:mr-[80px] mt-10 md:mt-0">
+          <div class="relative w-full flex flex-col items-end">
+            <span class="absolute w-[300px] h-[300px] md:w-[788px] md:h-[820px] -left-10 md:-left-[115px] -top-10 md:-top-[180px] origin-center animate-[wiggle-rotate_2s_ease-in-out]" style="background-image: url('{{ asset('images/assets/triangle-header.png') }}');"></span>
+
+            <div class="relative z-10 text-right flex flex-col items-end">
+              <h2 class="text-secondary text-2xl sm:text-4xl md:text-5xl font-black tracking-tight mb-2">Veelzijdig in<br/>de breedste zin<br/>van het woord</h2>
+              <div class="text-body text-lg md:text-2xl mb-8">
+                <p class="text-content">Of het nu gaat om (online) marketing, zakelijke campagnes of spectaculaire events – wij zetten jouw merk krachtig neer en zorgen voor impact.</p>
+              </div>
+
+              {% include 'components/button.html.twig' with {
+                class: 'w-full sm:w-[290px]',
+                href: '/cases',
+                label: 'Our cases',
+                outlined: true,
+                iconStart: true,
+                fill: 'fill-primary',
+              } %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="absolute w-full overflow-hidden -bottom-[1px] h-[300px] md:h-[870px] pointer-events-none">
+      <svg class="absolute w-[2000px] md:w-[3840px] h-[300px] md:h-[870px] bottom-0 left-1/2 -translate-x-1/2" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 3840 870">
+        <g>
+          <path style="fill: #fff;stroke:none;" d="M3291,1.2c-1.8,62.4-10.4,124.4-25.8,186.1-39.2,155.1-115.1,290.9-227.5,407.4-112.2,116.6-244.6,196.9-397.2,240.9-152.3,43.2-307.6,45.7-465.9,7.6L0,301.8v568.2h3840V1.2h-549Z"/>
+        </g>
+      </svg>
+    </div>
+  </header>
+
+  <section class="py-20 md:py-10 xl:py-0">
+    <div class="max-w-[1625px] h-full mx-auto px-4">
+      <div class="flex flex-col -mt-[40px] relative z-1">
+        <h2 class="text-secondary md:text-5xl text-4xl font-black tracking-tight mb-2 max-w-[780px]">Wij bij WeTarget mikken niet zomaar, maar raken <span class="text-primary">doelgericht</span>!</h2>
+
+        <div class="text-body md:text-2xl text-lg max-w-[850px] mt-3">
+          <p class="text-content">Met data, creatieve marketing en sterke content bereiken we niet alleen jouw doelgroep op de juiste kanalen, maar overtuigen we ze om in actie te komen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="flex flex-col w-full relative pt-10 md:pt-20 pb-8 md:pb-12 px-2 md:px-4">
+    <div class="max-w-[1920px] mx-auto w-full">
+      <p class="block text-body text-xs md:text-sm text-center w-full text-content">Wij hebben o.a. gewerkt voor:</p>
+      <div class="grid">
+      {% set images = [
+        'images/slider/delta.png',
+        'images/slider/biggreeneggv4.png',
+        'images/slider/logovval.jpg',
+        'images/slider/f1.png',
+        'images/slider/mcdonalds.png',
+        'images/slider/frieslandcampina.png'
+      ] %}
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-6">
+          {% for image in images %}
+            <div class="overflow-hidden rounded-lg flex items-center justify-center relative z-30 h-20 md:h-30">
+              <img
+                src="{{ asset(image) }}"
+                alt="Grid image {{ loop.index }}"
+                class="max-w-[70%] max-h-[70%] object-cover filter grayscale transition duration-300 ease-in-out hover:grayscale-0 opacity-30 hover:opacity-100"
+              />
+            </div>
+          {% endfor %}
+        </div>
+
+        <span class="flex justify-center w-full mt-6">
+          {% include 'components/button.html.twig' with {
+            inverted: true,
+            href: '/cases',
+            label: 'Alle cases',
+            iconEnd: true,
+            size: 'is-small',
+          } %}
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <section class="flex flex-col w-full relative py-12 px-2 md:px-4 text-center">
+    <h2 class="text-secondary text-4xl md:text-7xl font-black mb-20 md:mb-30 tracking-tighter">Focussen op wat telt</h2>
+
+    <div class="max-w-[1180px] mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-0 space-y-10 justify-center">
+      <a class="px-2 relative delay-[100ms] duration-[600ms] taos:scale-[0.6] taos:opacity-0 bg-triangle-homepage" data-taos-offset="150" href="/business" >
+        <span class="fill-secondary absolute w-[100px] h-[100px] md:w-[180px] md:h-[180px] -left-2 md:-left-[4px] -top-2 md:-top-[15px] rotate-24">
+          {{ source('@public_path'~asset('icons/play_triangle.svg')) }}
+        </span>
+        <div class="relative bg-triangle-homepage-rotate transition-all duration-300">
+          <span class="absolute origin-center w-[483px] h-[451px] left-1/2 -translate-x-1/2 -top-[60px] bg-triangle-homepage--1"></span>
+          <span class="absolute origin-center w-[483px] h-[451px] left-1/2 -translate-x-1/2 -top-[60px] bg-triangle-homepage-hover bg-triangle-homepage-hover--1 opacity-0 transition-all duration-300"></span>
+        </div>
+
+        <div class="relative z-10 flex flex-col items-center gap-6">
+          <div class="text-tertiary flex text-lg uppercase items-center justify-center gap-3 tracking-widest transition-all duration-300 h-10">
+            <span>MEER</span>
+            <span class="w-3 h-3 flex transition-all duration-300 fill-current">
+              {{ source('@public_path'~asset('icons/play_icon.svg')) }}
+            </span>
+          </div>
+
+          <p class="text-content text-body transition-all duration-300 text-base md:text-lg">Wij helpen bedrijven<br />met slimme marketingstrategieën, <br />sterke branding en resultaatgerichte <br />campagnes. Door de juiste boodschap <br />op het juiste moment te verspreiden, zorgen we<br /> voor maximale impact.</p>
+          <div class="relative">
+            <img src="{{ asset('images/logo/business_play.svg') }}" alt="Business" class="h-8 md:h-10" />
+            <img src="{{ asset('images/logo/business_play_white.svg') }}" alt="Business" class="h-8 md:h-10 bg-triangle-homepage-logo-hover--1 opacity-0 transition-all duration-300 absolute top-0" />
+          </div>
+        </div>
+      </a>
+
+      <a class="px-2 relative md:mt-0 mt-30 delay-[300ms] duration-[600ms] taos:scale-[0.6] taos:opacity-0 bg-triangle-homepage" data-taos-offset="150" href="/people">
+        <span class="fill-primary absolute w-[100px] h-[100px] md:w-[180px] md:h-[180px] right-10 md:right-[120px] -bottom-10 md:-bottom-[70px] -rotate-72">
+          {{ source('@public_path'~asset('icons/play_triangle.svg')) }}
+        </span>
+
+        <div class="relative bg-triangle-homepage-rotate transition-all duration-300">
+          <span class="absolute w-[483px] h-[451px] left-1/2 -translate-x-1/2 -top-[60px] bg-triangle-homepage--2"></span>
+          <span class="absolute w-[483px] h-[451px] left-1/2 -translate-x-1/2 -top-[60px] bg-triangle-homepage-hover bg-triangle-homepage-hover--2 opacity-0 transition-all duration-300"></span>
+        </div>
+
+        <div class="relative z-10 flex flex-col items-center gap-6">
+          <div class="relative">
+            <img src="{{ asset('images/logo/people_play.svg') }}" alt="People" class="h-10 md:h-12" />
+            <img src="{{ asset('images/logo/people_play_white.svg') }}" alt="People" class="h-10 md:h-12 bg-triangle-homepage-logo-hover--2 opacity-0 transition-all duration-300 absolute top-0" />
+          </div>
+          <p class="text-content text-body transition-all duration-300 text-base md:text-lg">Het draait niet alleen om zichtbaarheid, maar<br /> om de juiste connecties. Wij creëren campagnes<br /> die niet alleen de aandacht trekken,<br /> maar ook echte<br /> interactie en betrokkenheid<br /> stimuleren.</p>
+
+          <div class="text-primary flex text-lg uppercase items-center justify-center gap-3 tracking-widest transition-all duration-300 h-10">
+            <span>MEER</span>
+            <span class="w-3 h-3 flex transition-all duration-300 fill-current">
+              {{ source('@public_path'~asset('icons/play_icon.svg')) }}
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <a class="px-2 relative xl:col-span-1 md:col-span-2 xl:mt-0 mt-30 delay-[500ms] duration-[600ms] taos:scale-[0.6] taos:opacity-0 bg-triangle-homepage" data-taos-offset="150" href="/events">
+        <span class="fill-secondary absolute w-[100px] h-[100px] md:w-[180px] md:h-[180px] -right-4 md:-right-[40px] -bottom-10 md:-bottom-[80px] -rotate-32 xl:flex hidden">
+          {{ source('@public_path'~asset('icons/play_triangle.svg')) }}
+        </span>
+
+        <div class="relative bg-triangle-homepage-rotate transition-all duration-300">
+          <span class="absolute w-[483px] h-[451px] left-1/2 -translate-x-1/2 -top-[60px] bg-triangle-homepage--3"></span>
+          <span class="absolute w-[483px] h-[451px] left-1/2 -translate-x-1/2 -top-[60px] bg-triangle-homepage-hover bg-triangle-homepage-hover--3 opacity-0 transition-all duration-300"></span>
+        </div>
+
+        <div class="relative z-10 flex flex-col items-center gap-6">
+          <div class="text-secondary flex text-lg uppercase items-center justify-center gap-3 tracking-widest transition-all duration-300 h-10">
+            <span>MEER</span>
+            <span class="w-3 h-3 flex transition-all duration-300 fill-current">
+              {{ source('@public_path'~asset('icons/play_icon.svg')) }}
+            </span>
+          </div>
+
+          <p class="text-content text-body transition-all duration-300 text-base md:text-lg">Een event is meer dan <br />alleen een bijeenkomst; het is <br />een ervaring die indruk moet maken. <br />Wij zorgen voor impactvolle evenementen die <br />jouw merk laten leven en jouw <br />doelgroep inspireren.</p>
+          <div class="relative">
+            <img src="{{ asset('images/logo/events_play.svg') }}" alt="Events" class="h-8 md:h-10" />
+            <img src="{{ asset('images/logo/events_play_white.svg') }}" alt="Events" class="h-8 md:h-10 bg-triangle-homepage-logo-hover--3 opacity-0 transition-all duration-300 absolute top-0" />
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="md:flex hidden w-full relative pt-10 md:pt-20 py-8 md:py-12 px-2 md:px-4">
+    <div class="max-w-[1180px] mx-auto px-4 grid md:grid-cols-2">
+      <div class="relative z-10 md:block hidden">
+          <img src="{{ asset('images/assets/play_purple_txt.svg') }}" alt="Business" class="absolute right-0 top-0 w-[800px] max-w-none" />
+      </div>
+
+      <div class="relative">
+        <h2 class="text-secondary text-7xl xl:text-[83px] leading-[1] font-black w-full md:w-[650px] xl:w-[800px] relative md:left-[-300px] mt-10 md:mt-[100px] tracking-tight md:tracking-[-4px] mb-6 md:mb-10 paint-order-stroke-fill md:block hidden">
+          <span class="inline-block delay-[600ms] duration-[600ms] taos:translate-x-[30%]" data-taos-offset="150">
+            Wij richten ons op mensen, hun werk en de events eromheen
+          </span>
+          <span class="pointer-events-none absolute top-0 left-0 z-20 inline-block delay-[600ms] duration-[600ms] taos:translate-x-[30%] text-transparent stroke-white" style="-webkit-text-stroke: 1px white;" data-taos-offset="150">
+            Wij richten ons op mensen, hun werk en de events eromheen
+          </span>
+        </h2>
+        <h2 class="text-secondary text-2xl leading-[1] font-black md:hidden mt-20 mb-5">Wij richten ons op mensen, hun werk en de events eromheen</h2>
+        <div class="text-body text:lg md:text-xl mb-6 md:mb-8">
+          <p class="text-content">Creativiteit maakt het verschil, hoe groot of klein je ook bent. Of je nu koekjes verkoopt of de wereld mooier wilt maken. Een corporate of een lokale ondernemer. <br />Creativiteit telt. <br /><br />En bij WeTarget maken wij het verschil!</p>
+        </div>
+
+        <div class="flex">
+          {% include 'components/button.html.twig' with {
+            href: '/contact',
+            label: 'Neem contact op',
+            iconStart: true,
+            size: 'is-small',
+          } %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="flex w-full relative pt-40 md:pt-20 py-8 md:py-12 px-4">
+    <div class="max-w-[1180px] mx-auto">
+      <h2 class="text-white text-5xl md:text-7xl font-black w-full text-center text-stroke-secondary text-stroke-width-5 tracking-tight md:tracking-[-5px] paint-order-stroke-fill mb-10 md:mb-20">Projecten</h2>
+
+      <div class="grid grid-cols-1 space-y-15 md:space-x-15 lg:space-x-0">
+        <a class="grid grid-cols-1 lg:text-left text-center lg:grid-cols-[260px_1fr_280px] xl:grid-cols-[260px_1fr_200px] gap-4 md:gap-8 items-center delay-[100ms] duration-[600ms] taos:translate-x-[100%] taos:opacity-0" data-taos-offset="150" href="{{ path('cases_show', {'slug': businessCase.slug}) }}" id="case-business">
+          {# CASE 1: BUSINESS #}
+          <div class="flex justify-center lg:justify-start">
+            <img src="{{ asset('images/logo/business_play.svg') }}" alt="Business" class="h-8 md:h-10" />
+          </div>
+          <div>
+            <h3 class="font-bold subpixel-antialiased text-lg md:text-xl">{{ businessCase ? businessCase.title : '—' }}</h3>
+            <div class="text-body mb-0 lg:mb-5 text-base md:text-lg">{{ businessCase ? businessCase.subpageTextFirst|raw : '' }}</div>
+
+            {% if businessCase and businessCase.tags %}
+              <div class="mt-3">
+                <span class="text-sm md:text-base text-tertiary font-medium">{{ businessCase.tags }}</span>
+              </div>
+            {% endif %}
+            </div>
+
+          <div class="relative flex justify-center items-center w-[280px] h-[280px] lg:-mt-[80px] lg:mx-0 mx-auto">
+            <div class="absolute top-0 left-0 w-full h-full z-60 drop-shadow-[0_0_10px_rgba(0,0,0,0.1)] rotate-90">
+              <svg width="100%" height="100%" preserveAspectRatio="xMidYMid meet" fill="white" id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="50 30 850 850">
+                <path fill="white" d="M404.6,177.8c-22,12.6-39.4,30.2-52.4,52.8l-181,314c-12.9,22.4-19.4,46.3-19.4,71.8,0,25.3,6.6,49.3,19.6,71.9,13,22.6,30.5,40.3,52.5,53,22.2,12.8,46.2,19.1,72.1,18.9h362.3c26.1-.2,50.1-6.6,72.1-19.2,22.1-12.8,39.5-30.4,52.4-52.8,13-22.5,19.5-46.6,19.6-72.1,0-25.3-6.6-49.3-19.6-71.9l-181.5-313.6c-12.8-22.5-30.3-40.2-52.5-53-22-12.7-46.1-19-72.1-18.9-26.1.1-50.1,6.5-72.1,19.1"></path>
+              </svg>
+            </div>
+            {% if businessCase and businessCase.logoFileName %}
+              <img src="{{ vich_uploader_asset(businessCase, 'logoFile') }}" alt="Business" class="absolute inset-0 m-auto right-8 w-[120px] h-[120px] z-100 object-contain"  />
+            {% endif %}
+          </div>
+        </a>
+
+        <a class="grid grid-cols-1 lg:text-left text-center lg:grid-cols-[260px_1fr_280px] xl:grid-cols-[260px_1fr_200px] gap-4 md:gap-8 items-center delay-[200ms] duration-[600ms] taos:translate-x-[100%] taos:opacity-0" data-taos-offset="150" href="{{ path('cases_show', {'slug': peopleCase.slug}) }}" id="case-people">
+          {# CASE 2: PEOPLE #}
+          <div class="flex justify-center lg:justify-start">
+            <img src="{{ asset('images/logo/people_play.svg') }}" alt="People" class="h-10 md:h-12" />
+          </div>
+
+          <div>
+            <h3 class="font-bold subpixel-antialiased text-lg md:text-xl">{{ peopleCase ? peopleCase.title : '—' }}</h3>
+            <div class="text-body mb-0 lg:mb-5 text-base md:text-lg">{{ peopleCase ? peopleCase.subpageTextFirst|raw : '' }}</div>
+
+            {% if peopleCase and peopleCase.tags %}
+              <div class="mt-3">
+                <span class="text-sm md:text-base text-primary font-medium">{{ peopleCase.tags }}</span>
+              </div>
+            {% endif %}
+          </div>
+
+          <div class="relative flex justify-center items-center w-[280px] h-[280px] lg:-mt-[80px] lg:mx-0 mx-auto">
+            <div class="absolute top-0 left-0 w-full h-full z-60 drop-shadow-[0_0_10px_rgba(0,0,0,0.1)] -rotate-90">
+              <svg width="100%" height="100%" preserveAspectRatio="xMidYMid meet" fill="white" id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="50 30 850 850">
+                <path fill="white" d="M404.6,177.8c-22,12.6-39.4,30.2-52.4,52.8l-181,314c-12.9,22.4-19.4,46.3-19.4,71.8,0,25.3,6.6,49.3,19.6,71.9,13,22.6,30.5,40.3,52.5,53,22.2,12.8,46.2,19.1,72.1,18.9h362.3c26.1-.2,50.1-6.6,72.1-19.2,22.1-12.8,39.5-30.4,52.4-52.8,13-22.5,19.5-46.6,19.6-72.1,0-25.3-6.6-49.3-19.6-71.9l-181.5-313.6c-12.8-22.5-30.3-40.2-52.5-53-22-12.7-46.1-19-72.1-18.9-26.1.1-50.1,6.5-72.1,19.1"></path>
+              </svg>
+            </div>
+            {% if peopleCase and peopleCase.logoFileName %}
+              <img src="{{ vich_uploader_asset(peopleCase, 'logoFile') }}" alt="People" class="absolute inset-0 left-8 m-auto w-[120px] h-[120px] z-100 object-contain"  />
+            {% endif %}
+          </div>
+        </a>
+
+
+          {# CASE 3: EVENTS #}
+        <a class="grid grid-cols-1 lg:text-left text-center lg:grid-cols-[260px_1fr_280px] xl:grid-cols-[260px_1fr_200px] gap-4 md:gap-8 items-center delay-[300ms] duration-[600ms] taos:translate-x-[100%] taos:opacity-0" data-taos-offset="150" href="{{ path('cases_show', {'slug': eventsCase.slug}) }}" id="case-events">
+          <div class="flex justify-center lg:justify-start">
+            <img src="{{ asset('images/logo/events_play.svg') }}" alt="Events" class="h-8 md:h-10" />
+          </div>
+
+          <div>
+            <h3 class="font-bold subpixel-antialiased text-lg md:text-xl">{{ eventsCase ? eventsCase.title : '—' }}</h3>
+            <div class="text-body mb-0 lg:mb-5 text-base md:text-lg">{{ eventsCase ? eventsCase.subpageTextFirst|raw : '' }}</div>
+
+            {% if eventsCase and eventsCase.tags %}
+              <div class="mt-3">
+                <span class="text-sm md:text-base text-secondary font-medium">{{ eventsCase.tags }}</span>
+              </div>
+            {% endif %}
+          </div>
+
+          <div class="relative flex justify-center items-center w-[280px] h-[280px] lg:-mt-[80px] lg:mx-0 mx-auto">
+            <div class="absolute top-0 left-0 w-full h-full z-60 drop-shadow-[0_0_10px_rgba(0,0,0,0.1)] rotate-90">
+              <svg width="100%" height="100%" preserveAspectRatio="xMidYMid meet" fill="white" id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="50 30 850 850">
+                <path fill="white" d="M404.6,177.8c-22,12.6-39.4,30.2-52.4,52.8l-181,314c-12.9,22.4-19.4,46.3-19.4,71.8,0,25.3,6.6,49.3,19.6,71.9,13,22.6,30.5,40.3,52.5,53,22.2,12.8,46.2,19.1,72.1,18.9h362.3c26.1-.2,50.1-6.6,72.1-19.2,22.1-12.8,39.5-30.4,52.4-52.8,13-22.5,19.5-46.6,19.6-72.1,0-25.3-6.6-49.3-19.6-71.9l-181.5-313.6c-12.8-22.5-30.3-40.2-52.5-53-22-12.7-46.1-19-72.1-18.9-26.1.1-50.1,6.5-72.1,19.1"></path>
+              </svg>
+            </div>
+            {% if eventsCase and eventsCase.logoFileName %}
+              <img src="{{ vich_uploader_asset(eventsCase, 'logoFile') }}" alt="Events" class="absolute inset-0 m-auto right-8 w-[120px] h-[120px] z-100 object-contain"  />
+            {% endif %}
+          </div>
+        </a>
+      </div>
+
+
+      <span class="flex justify-center w-full mt-6">
+        {% include 'components/button.html.twig' with {
+          inverted: true,
+          href: '/cases',
+          label: 'Alle cases',
+          iconEnd: true,
+          size: 'is-small',
+        } %}
+      </span>
+    </div>
+  </section>
+{% endblock %}
