@@ -37,8 +37,8 @@ importers:
         specifier: ^4.0.1
         version: 4.0.1(@hotwired/stimulus@3.2.2)
       '@symfony/ux-turbo':
-        specifier: file:vendor/symfony/ux-turbo/assets
-        version: file:vendor/symfony/ux-turbo/assets(@hotwired/stimulus@3.2.2)(@hotwired/turbo@8.0.13)
+        specifier: ^2.4.0
+        version: 2.30.0(@hotwired/stimulus@3.2.2)(@hotwired/turbo@8.0.13)
       '@symfony/webpack-encore':
         specifier: ^5.0.0
         version: 5.1.0(@babel/core@7.27.4)(@babel/preset-env@7.27.2(@babel/core@7.27.4))(@symfony/stimulus-bridge@4.0.1(@hotwired/stimulus@3.2.2))(postcss-loader@8.1.1(postcss@8.5.4)(webpack@5.99.9))(postcss@8.5.4)(webpack-cli@5.1.4)(webpack@5.99.9)
@@ -625,8 +625,8 @@ packages:
     peerDependencies:
       '@hotwired/stimulus': ^3.0
 
-  '@symfony/ux-turbo@file:vendor/symfony/ux-turbo/assets':
-    resolution: {directory: vendor/symfony/ux-turbo/assets, type: directory}
+  '@symfony/ux-turbo@2.30.0':
+    resolution: {integrity: sha512-UqJMSO5VfOsxIgzRyGtjr7IaC1hQ4mwkQ636a1JLNDZjXi50DB6PNvzZOFxR4e1tqIQKY8rYBooSRas53U20jg==}
     peerDependencies:
       '@hotwired/stimulus': ^3.0.0
       '@hotwired/turbo': ^7.1.0 || ^8.0
@@ -3324,7 +3324,7 @@ snapshots:
       loader-utils: 2.0.4
       schema-utils: 4.3.2
 
-  '@symfony/ux-turbo@file:vendor/symfony/ux-turbo/assets(@hotwired/stimulus@3.2.2)(@hotwired/turbo@8.0.13)':
+  '@symfony/ux-turbo@2.30.0(@hotwired/stimulus@3.2.2)(@hotwired/turbo@8.0.13)':
     dependencies:
       '@hotwired/stimulus': 3.2.2
       '@hotwired/turbo': 8.0.13
